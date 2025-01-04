@@ -1,0 +1,43 @@
+﻿@model Crudopration.Models.demo
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+@using (Html.BeginForm("savedata", "person", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-3">
+            <label>productId</label>
+            @Html.TextBoxFor(m => m.ProductId, new { @class = "form-control" })
+        </div>
+        <div class="col-md-3">
+            <label>productname</label>
+            @Html.TextBoxFor(m => m.ProductName, new { @class = "form-control" })
+        </div>
+        <div class="col-md-3">
+            <label>categoryid</label>
+            @Html.TextBoxFor(m => m.categoryId, new { @class = "form-control" })
+        </div>
+        <div class="col-md-3">
+            <label>categoryname</label>
+            @Html.TextBoxFor(m => m.categoryName, new { @class = "form-control" })
+        </div>
+
+    </div>
+
+    <div>
+        <button type="submit" class="btn-success">save</button>
+    </div>
+
+}
+
+<p>
+    @Html.Action("Getlist")
+</p>
+
+
+
+
